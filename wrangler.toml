@@ -3,5 +3,10 @@ compatibility_date = "2024-01-01"
 # Set for non-interactive deploy (CI or multiple accounts). Override with CLOUDFLARE_ACCOUNT_ID env.
 account_id = "3dacdafa2c71824917426c41dd52ebc0"
 
+# Serve the Worker + static assets on your domain.
+routes = [
+  { pattern = "hawkeeman.xyz/*", custom_domain = true },
+]
+
 [assets]
 not_found_handling = "single-page-application"
