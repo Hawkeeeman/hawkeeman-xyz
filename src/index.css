@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 94%;
+
+    --card: 222 47% 9%;
+    --card-foreground: 210 40% 94%;
+
+    --popover: 222 47% 9%;
+    --popover-foreground: 210 40% 94%;
+
+    --primary: 142 71% 45%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 217 33% 14%;
+    --secondary-foreground: 210 40% 94%;
+
+    --muted: 217 33% 14%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 217 33% 18%;
+    --accent-foreground: 210 40% 94%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 142 71% 45%;
+
+    --radius: 0.75rem;
+
+    --neon-green: 142 71% 45%;
+    --neon-green-glow: 142 71% 55%;
+    --deep-blue: 222 47% 11%;
+    --surface: 222 47% 8%;
+
+    --sidebar-background: 222 47% 6%;
+    --sidebar-foreground: 210 40% 94%;
+    --sidebar-primary: 142 71% 45%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 217 33% 18%;
+    --sidebar-accent-foreground: 210 40% 94%;
+    --sidebar-border: 217 33% 18%;
+    --sidebar-ring: 142 71% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-[hsl(var(--neon-green-glow))];
+  }
+
+  .glow-green {
+    box-shadow: 0 0 20px hsl(var(--neon-green) / 0.3), 0 0 60px hsl(var(--neon-green) / 0.1);
+  }
+
+  .glow-green-sm {
+    box-shadow: 0 0 10px hsl(var(--neon-green) / 0.2);
+  }
+
+  .glass {
+    @apply bg-card/60 backdrop-blur-xl border border-border/50;
+  }
+
+  .grid-bg {
+    background-image: 
+      linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-6 py-20 md:px-8 lg:px-16 lg:py-28;
+  }
+}
