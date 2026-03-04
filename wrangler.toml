@@ -1,0 +1,4 @@
+# Static Pages deploy only. Do not run Vite/Workers setup.
+name = "hawkeeman-xyz"
+pages_build_output_dir = "dist"
+compatibility_date = "2024-01-01"
